@@ -15,7 +15,7 @@ namespace StudentManagement.Business.BusinessServices
 
         public void Test()
         {
-            _studentRepository.Create(new Domain.Models.Student()
+            _studentRepository.Create(new Domain.Entities.Student()
             {
                 Id = 0,
                 Address = "Hue",
