@@ -1,22 +1,22 @@
 ﻿using StudentManagement.Business.Interfaces;
+using StudentManagement.Core.Models;
 using StudentManagement.Domain.Interfaces;
-using StudentManagement.Domain.Models;
 using System;
 
 namespace StudentManagement.Business.BusinessServices
 {
     public class StudentBusiness : IStudentBusiness
     {
-        protected IStudentRepository _studentRepository;
+        protected IStudentService _studentService;
 
-        public StudentBusiness(IStudentRepository studentRepository)
+        public StudentBusiness(IStudentService studentService)
         {
-            _studentRepository = studentRepository;
+            _studentService = studentService;
         }
 
         public void Test()
         {
-            _studentRepository.Create(new Student()
+            _studentService.Create(new Student()
             {
                 Id = 0,
                 Address = "Hue",

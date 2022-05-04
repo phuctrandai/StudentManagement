@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using StudentManagement.Domain.Context;
 using StudentManagement.Domain.Interfaces;
+using StudentManagement.Domain.Services;
 
 namespace StudentManagement.Domain.RegisterModule
 {
@@ -8,8 +8,8 @@ namespace StudentManagement.Domain.RegisterModule
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType(typeof(StudentRepository))
-                 .As(typeof(IStudentRepository))
+            builder.RegisterType(typeof(StudentService))
+                 .As(typeof(IStudentService))
                  .InstancePerLifetimeScope().PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
         }
     }

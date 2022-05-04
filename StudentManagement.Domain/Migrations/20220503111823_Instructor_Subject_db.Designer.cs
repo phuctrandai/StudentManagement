@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StudentManagement.Domain.Context;
-using StudentManagement.Domain.Models;
+using StudentManagement.Core.Context;
+using StudentManagement.Core.Models;
 
 namespace StudentManagement.Domain.Migrations
 {
@@ -22,7 +22,7 @@ namespace StudentManagement.Domain.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("StudentManagement.Domain.Models.Class", b =>
+            modelBuilder.Entity("StudentManagement.Core.Models.Class", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,7 +39,7 @@ namespace StudentManagement.Domain.Migrations
                     b.ToTable("Class");
                 });
 
-            modelBuilder.Entity("StudentManagement.Domain.Models.Instructor", b =>
+            modelBuilder.Entity("StudentManagement.Core.Models.Instructor", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -56,7 +56,7 @@ namespace StudentManagement.Domain.Migrations
                     b.ToTable("Instructor");
                 });
 
-            modelBuilder.Entity("StudentManagement.Domain.Models.Student", b =>
+            modelBuilder.Entity("StudentManagement.Core.Models.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,7 +86,7 @@ namespace StudentManagement.Domain.Migrations
                     b.ToTable("Student");
                 });
 
-            modelBuilder.Entity("StudentManagement.Domain.Models.Subject", b =>
+            modelBuilder.Entity("StudentManagement.Core.Models.Subject", b =>
                 {
                     b.Property<string>("ID")
                         .HasColumnType("nvarchar(450)");
@@ -115,18 +115,18 @@ namespace StudentManagement.Domain.Migrations
                     b.ToTable("Subject");
                 });
 
-            modelBuilder.Entity("StudentManagement.Domain.Models.Student", b =>
+            modelBuilder.Entity("StudentManagement.Core.Models.Student", b =>
                 {
-                    b.HasOne("StudentManagement.Domain.Models.Class", "Class")
+                    b.HasOne("StudentManagement.Core.Models.Class", "Class")
                         .WithMany("Students")
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("StudentManagement.Domain.Models.Subject", b =>
+            modelBuilder.Entity("StudentManagement.Core.Models.Subject", b =>
                 {
-                    b.HasOne("StudentManagement.Domain.Models.Instructor", "Instructor")
+                    b.HasOne("StudentManagement.Core.Models.Instructor", "Instructor")
                         .WithMany("Subjects")
                         .HasForeignKey("InstructorID")
                         .OnDelete(DeleteBehavior.Cascade)

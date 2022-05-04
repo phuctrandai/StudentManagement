@@ -13,5 +13,9 @@
     <ProjectReference Include="..\StudentManagement.Core\StudentManagement.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 
 </Project>
