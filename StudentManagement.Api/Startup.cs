@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StudentManagement.Business.RegisterModule;
-using StudentManagement.Domain.Context;
+using StudentManagement.Domain.Models;
 using StudentManagement.Domain.RegisterModule;
 
 namespace StudentManagement.Api
@@ -27,7 +27,7 @@ namespace StudentManagement.Api
 
             services.AddMvc();
 
-            services.AddDbContext<StudentManagementDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<StudentManagementContext>(item => item.UseSqlServer(Configuration.GetConnectionString("Default")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

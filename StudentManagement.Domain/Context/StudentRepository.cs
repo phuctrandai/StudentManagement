@@ -1,13 +1,13 @@
 ﻿using StudentManagement.Domain.Interfaces;
-using StudentManagement.Domain.Entities;
+using StudentManagement.Domain.Models;
 
 namespace StudentManagement.Domain.Context
 {
     public class StudentRepository : IStudentRepository
     {
-        protected readonly StudentManagementDbContext _dbContext;
+        protected readonly StudentManagementContext _dbContext;
 
-        public StudentRepository(StudentManagementDbContext context)
+        public StudentRepository(StudentManagementContext context)
         {
             _dbContext = context;
         }
