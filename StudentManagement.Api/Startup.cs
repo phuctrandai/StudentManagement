@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StudentManagement.Business.RegisterModule;
-using StudentManagement.Domain.Models;
+using StudentManagement.Domain.Context;
 using StudentManagement.Domain.RegisterModule;
 
 namespace StudentManagement.Api

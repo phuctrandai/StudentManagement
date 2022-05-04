@@ -14,7 +14,7 @@ namespace StudentManagement.Domain.Context
 
         public void Create(Student student)
         {
-            _dbContext.Student.Add(student);
+            _dbContext.Students.Add(student);
             _dbContext.SaveChanges(true);
         }
     }

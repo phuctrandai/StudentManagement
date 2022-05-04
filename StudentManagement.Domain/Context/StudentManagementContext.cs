@@ -1,8 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using StudentManagement.Domain.Models;
 
-namespace StudentManagement.Domain.Models
+namespace StudentManagement.Domain.Context
 {
-    public partial class StudentManagementContext : DbContext
+    public partial class StudentManagementContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
         public StudentManagementContext()
         {
@@ -13,7 +16,7 @@ namespace StudentManagement.Domain.Models
         {
         }
 
-        public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -53,6 +56,8 @@ namespace StudentManagement.Domain.Models
             });
 
             OnModelCreatingPartial(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
