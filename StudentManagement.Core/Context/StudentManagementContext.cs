@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using StudentManagement.Domain.Models;
+using StudentManagement.Core.Models;
 
-namespace StudentManagement.Domain.Context
+namespace StudentManagement.Core.Context
 {
     public partial class StudentManagementContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
