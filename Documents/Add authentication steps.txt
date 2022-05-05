@@ -26,6 +26,7 @@
 		options.AccessDeniedPath = "/Account/AccessDenied";
 		options.SlidingExpiration = true;
 	});
+4.1 Add migration and update database
 
 5 Add Atribute to Controller or Action which want to authenticate:  [Authorize]
 
