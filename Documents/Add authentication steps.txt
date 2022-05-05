@@ -1,4 +1,4 @@
-1 Install Microsoft.AspNetCore.Identity.EntityFrameworkCore into Core project
+1 Install Microsoft.AspNetCore.Identity.EntityFrameworkCore into project which contains dbContext
 
 2 Update DbContext class
 + StudentManagementContext : IdentityDbContext<IdentityUser, IdentityRole, string>
